@@ -1,0 +1,159 @@
+
+
+.rea-r-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.rea-r-mode-switch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rea-r-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 10px;
+}
+
+.rea-r-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.rea-r-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.rea-r-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.rea-r-switch input:checked + .rea-r-slider {
+  background-color: #2196F3;
+}
+
+.rea-r-switch input:checked + .rea-r-slider:before {
+  transform: translateX(26px);
+}
+
+/* Table Styles */
+.rea-r-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.rea-r-table th, .rea-r-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.rea-r-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+.rea-r-product-info {
+  display: flex;
+  align-items: center;
+}
+
+.rea-r-product-info img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.rea-r-quantity-control button {
+  width: 30px;
+  height: 30px;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.rea-r-delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  /* Adapter la table pour les petits écrans */
+  .rea-r-table {
+    display: block; /* Convertir la table en bloc */
+    width: 100%;
+    overflow-x: auto; /* Ajouter le défilement horizontal si nécessaire */
+  }
+ .js-d{
+  color:red;
+  font-weight: bold;
+  font-size:15px;
+  margin: 10px;
+ }
+  .rea-r-table thead {
+    display: none; /* Cacher l'en-tête de la table */
+  }
+
+  .rea-r-table tbody, .rea-r-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .rea-r-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .rea-r-table td:before {
+    content: attr(data-label); /* Utiliser l'attribut data-label pour afficher les titres */
+    flex-basis: 40%;
+    font-weight: bold;
+    color: #495057;
+  }
+
+  .rea-r-product-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rea-r-product-info img {
+    margin-bottom: 10px;
+  }
+}
+
